@@ -1,10 +1,3 @@
-/**
- * Represents a Cleric character in the game.
- * A Cleric can both attack and heal other characters.
- * 
- * @author ITSC
- * @version Mar 23, 2025
- */
 public class Cleric extends Character implements Healer, Attacker {
     private int healingPower;
     private int damage;

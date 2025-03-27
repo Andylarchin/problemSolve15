@@ -1,10 +1,3 @@
-/**
- * Abstract class representing a generic character in the game.
- * Holds common fields and methods for Player and Monster.
- * 
- * @author ITSC 1213
- * @version Mar 23, 2025
- */
 public abstract class Character {
     protected String name;
     protected int health;
