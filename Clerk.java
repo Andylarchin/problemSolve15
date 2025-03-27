@@ -1,1 +1,0 @@
-i love tej and i love java

@@ -9,23 +9,56 @@ import java.util.ArrayList;
  */
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Character> characters = new ArrayList<>();
+        // Create example objects
         Player player1 = new Player("Alice", 100, 5, "Fireball");
         Monster monster1 = new Monster("Goblin", 50, "Beast", 15);
+        Cleric cleric1 = new Cleric("Eli", 80, 20, 10);
 
-        characters.add(player1);
-        characters.add(monster1);
+        // Target character
+        Character target = new Monster("Orc", 60, "Warrior", 20);
 
-        showCharacterInfo(characters);
+        // Test simulateAttack
+        System.out.println("\nTesting simulate - Attack:");
+        simulateAttack(player1, target); // Player attacks target
+        simulateAttack(monster1, target); // Monster attacks target
 
-        System.out.println("\nCombat Demonstration:");
-        player1.attack(monster1); // Player attacks Monster
-        monster1.attack(player1); // Monster attacks Player
+        // Test simulateHeal
+        System.out.println("\nTesting simulate - Heal:");
+        simulateHeal(cleric1, target); // Cleric heals target
 
-        System.out.println("\nAfter Combat:");
-        showCharacterInfo(characters);
+        // Display final state of the target
+        System.out.println("\nFinal State of Target:");
+        target.display();
     }
 
+    /**
+     * Simulates an attack action.
+     * 
+     * @param attacker The object performing the attack.
+     * @param target The target of the attack.
+     */
+    public static void simulateAttack(Attacker attacker, Character target) {
+        System.out.println("Simulating attack...");
+        attacker.attack(target);
+    }
+
+    /**
+     * Simulates a heal action.
+     * 
+     * @param healer The object performing the heal.
+     * @param target The target of the heal.
+     */
+    public static void simulateHeal(Healer healer, Character target) {
+        System.out.println("Simulating heal...");
+        healer.heal(target);
+    }
+
+    /**
+     * Displays information about each character in the list.
+     * Demonstrates polymorphism by calling the display() method on Character references.
+     * 
+     * @param characters List of Character objects
+     */
     public static void showCharacterInfo(ArrayList<Character> characters) {
         System.out.println("Character Information:");
         for (Character character : characters) {
