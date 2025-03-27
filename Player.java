@@ -1,10 +1,3 @@
-/**
- * Purpose: Represents a player in the game with health, name, level and special ability. 
- * Implements the Attacker interface to allow attacking other characters.
- * 
- * @version Mar 23, 2025
- */
-
 public class Player extends Character implements Attacker {
 
     private String name;

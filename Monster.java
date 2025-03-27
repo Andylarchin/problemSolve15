@@ -1,10 +1,3 @@
-/**
- * Purpose: Represents a monster with health, name, type and damage.
- * Implements the Attacker interface to allow attacking other characters.
- * 
- * @author  ITSC 1213
- * @version Mar 23, 2025
- */
 public class Monster extends Character implements Attacker {
     private String type;
     private int damage;
